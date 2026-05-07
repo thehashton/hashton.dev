@@ -1,6 +1,6 @@
 # Hashton
 
-**Harry Ashton** — I’m a senior frontend engineer (contract & consulting). This repo is my brutalist portfolio: a single-page site with a hero video, MDX-powered case studies, and a contact pipeline wired for production deploys on Vercel.
+**Harry Ashton** — Senior frontend engineer (contract & consulting). This repository is the source for my portfolio site; stack and setup are documented below if you need them.
 
 ---
 

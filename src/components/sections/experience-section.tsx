@@ -3,11 +3,12 @@ import Link from "next/link";
 import { SectionLabel } from "@/components/sections/section-label";
 import { Reveal } from "@/components/motion/reveal";
 import { experience } from "@/lib/experience";
+import { shellClass } from "@/lib/layout-shell";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="scroll-mt-28 border-b-2 border-ink bg-paper py-20 md:py-28">
-      <div className="shell">
+    <section id="experience" className="scroll-mt-28 border-b-2 border-ink bg-paper py-14 md:py-24 lg:py-28">
+      <div className={shellClass}>
         <Reveal>
           <SectionLabel label="Experience" />
           <h2 className="font-sans text-[2.5rem] font-bold tracking-tight text-ink md:text-[3rem]">

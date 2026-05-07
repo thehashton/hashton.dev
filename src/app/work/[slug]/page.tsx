@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { shellProseClass } from "@/lib/layout-shell";
 import { getWorkBySlug, getWorkSlugs } from "@/lib/work";
 import { site } from "@/lib/site";
+import { cn } from "@/lib/utils";
 
 export async function generateStaticParams() {
   return getWorkSlugs().map((slug) => ({ slug }));
@@ -46,7 +48,7 @@ export default async function WorkCaseStudyPage({
   }
 
   return (
-    <article className="shell-prose py-16 md:py-24">
+    <article className={cn(shellProseClass, "py-14 md:py-20 lg:py-24")}>
       <Link href="/#work" className="caption-mono text-ink-600 hover:bg-ink hover:text-paper">
         ← Back to selected work
       </Link>

@@ -1,5 +1,6 @@
 import { SectionLabel } from "@/components/sections/section-label";
 import { Reveal } from "@/components/motion/reveal";
+import { shellClass } from "@/lib/layout-shell";
 
 const pillars = [
   {
@@ -18,8 +19,8 @@ const pillars = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="scroll-mt-28 border-b-2 border-ink bg-paper py-20 md:py-28">
-      <div className="shell">
+    <section id="services" className="scroll-mt-28 border-b-2 border-ink bg-paper py-14 md:py-24 lg:py-28">
+      <div className={shellClass}>
         <Reveal>
           <SectionLabel label="What I do" />
           <h2 className="font-sans text-[2.5rem] font-bold tracking-tight text-ink md:text-[3rem]">

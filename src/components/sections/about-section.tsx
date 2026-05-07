@@ -1,11 +1,12 @@
 import { SectionLabel } from "@/components/sections/section-label";
 import { Reveal } from "@/components/motion/reveal";
+import { shellClass } from "@/lib/layout-shell";
 import { site } from "@/lib/site";
 
 export function AboutSection() {
   return (
-    <section id="about" className="scroll-mt-28 border-b-2 border-ink bg-paper py-20 md:py-28">
-      <div className="shell">
+    <section id="about" className="scroll-mt-28 border-b-2 border-ink bg-paper py-14 md:py-24 lg:py-28">
+      <div className={shellClass}>
         <Reveal>
           <SectionLabel label="About" />
           <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">

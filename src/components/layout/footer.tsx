@@ -1,13 +1,15 @@
 import Link from "next/link";
 
 import { SocialBrandIcon } from "@/components/social/social-brand-icon";
+import { shellClass } from "@/lib/layout-shell";
 import { sectionNav } from "@/lib/nav";
 import { socialPlatforms } from "@/lib/social-platforms";
+import { cn } from "@/lib/utils";
 
 export function Footer() {
   return (
     <footer className="border-t-2 border-ink bg-paper">
-      <div className="shell grid gap-12 py-16 md:grid-cols-[1.2fr_1fr]">
+      <div className={cn(shellClass, "grid gap-10 py-12 md:gap-12 md:py-16 md:grid-cols-[1.2fr_1fr]")}>
         <div>
           <p className="caption-mono text-ink-600">© {new Date().getFullYear()} Harry Ashton</p>
           <p className="mt-4 max-w-md font-sans text-[2rem] font-bold leading-none tracking-tight text-ink">

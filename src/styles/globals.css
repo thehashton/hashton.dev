@@ -95,6 +95,7 @@
   }
 
   html {
+    width: 100%;
     scroll-behavior: smooth;
   }
 
@@ -114,6 +115,7 @@
       "liga" 1,
       "kern" 1;
     -webkit-font-smoothing: antialiased;
+    width: 100%;
     overflow-x: clip;
   }
 
@@ -160,34 +162,5 @@
     background-color: var(--color-ink);
     color: var(--color-paper);
     box-shadow: var(--shadow-brutal-sm);
-  }
-
-  /* Avoid `100vw`-based max-width (mobile scrollbar / overflow shifts layout). */
-  .shell {
-    margin-inline: auto;
-    width: 100%;
-    min-width: 0;
-    max-width: 1400px;
-    padding-inline: 1rem;
-  }
-
-  @media (min-width: 640px) {
-    .shell {
-      padding-inline: 1.5rem;
-    }
-  }
-
-  .shell-prose {
-    margin-inline: auto;
-    width: 100%;
-    min-width: 0;
-    max-width: 900px;
-    padding-inline: 1rem;
-  }
-
-  @media (min-width: 640px) {
-    .shell-prose {
-      padding-inline: 1.5rem;
-    }
   }
 }

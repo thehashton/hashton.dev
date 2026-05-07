@@ -28,7 +28,7 @@ const skills = [
 
 export function HeroSkills() {
   return (
-    <div className="border-t border-ink/25 pt-8">
+    <div className="border-t border-ink/25 pt-6 md:pt-8">
       <p className="caption-mono text-ink-600">Stack</p>
       <ul className="mt-4 flex flex-wrap gap-3">
         {skills.map((s) => (

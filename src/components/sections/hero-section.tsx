@@ -30,25 +30,30 @@ export function HeroSection() {
           </p>
 
           <p className="caption-mono mt-8 border-y border-ink/10 py-4 text-[0.8125rem] leading-relaxed text-ink-600 md:mt-10 md:text-caption">
-            {site.location}. {site.stats.yearsExperience} years shipping UI. Open to contract, consulting, or senior IC roles.
+            {site.location}. {site.stats.yearsExperience} years shipping ui. Open to contract, consulting, or senior IC roles.
           </p>
 
           <div className="mt-8 md:mt-10">
-            <div className="inline-flex flex-wrap items-stretch gap-2 rounded-2xl border border-ink/10 bg-muted p-2">
-              <Button variant="accent" className="rounded-xl" asChild>
-                <Link href="#contact" className="inline-flex items-center gap-2">
+            <div
+              className={cn(
+                "flex max-w-full flex-col gap-2 rounded-2xl border border-ink/10 bg-muted p-2",
+                "md:w-max md:flex-row md:flex-nowrap md:items-stretch md:gap-2",
+              )}
+            >
+              <Button variant="accent" className="w-full shrink-0 rounded-xl md:w-auto" asChild>
+                <Link href="#contact" className="inline-flex items-center justify-center gap-2">
                   <Mail className="size-4" aria-hidden />
                   Hire me
                 </Link>
               </Button>
-              <Button className="rounded-xl" asChild>
-                <Link href="#contact" className="inline-flex items-center gap-2">
+              <Button className="w-full shrink-0 rounded-xl md:w-auto" asChild>
+                <Link href="#contact" className="inline-flex items-center justify-center gap-2">
                   <Briefcase className="size-4" aria-hidden />
                   Contract & consulting
                 </Link>
               </Button>
-              <Button variant="ghost" className="rounded-xl" asChild>
-                <Link href="#work" className="inline-flex items-center gap-2">
+              <Button variant="ghost" className="w-full shrink-0 rounded-xl md:w-auto" asChild>
+                <Link href="#work" className="inline-flex items-center justify-center gap-2">
                   <ArrowRight className="size-4" aria-hidden />
                   See my work
                 </Link>
@@ -60,10 +65,11 @@ export function HeroSection() {
         <Reveal delay={0.08} className="min-w-0">
           <div>
             <HeroVideo
-              src={{ mp4: "/video/hero.mp4", webm: "/video/hero.webm" }}
-              poster="/video/hero-poster.jpg"
-              durationLabel="01:00"
+              kind="mux"
+              playbackId="KuB2l83CxQCAaUCp9F8H00vhNtrTX011d8K3WiPzpfmjs"
+              thumbnailTime={1}
               caption="A minute with Harry"
+              durationLabel="01:00"
             />
             <HeroSkills />
           </div>

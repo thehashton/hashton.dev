@@ -18,6 +18,6 @@ export const site = {
     instagram: "https://www.instagram.com/thehashton/",
   },
   stats: {
-    yearsExperience: "14+",
+    yearsExperience: "11+",
   },
 } as const;

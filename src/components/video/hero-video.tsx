@@ -92,6 +92,15 @@ export function HeroVideo(props: HeroVideoProps) {
 
   const inView = useInViewOnce(shellRef);
 
+  const closeModal = useCallback(() => {
+    setOpen(false);
+    const v = videoRef.current;
+    if (v) {
+      v.pause();
+      setPlaying(false);
+    }
+  }, []);
+
   useEffect(() => {
     if (open || inView) setMountedPlayer(true);
   }, [open, inView]);
@@ -125,7 +134,7 @@ export function HeroVideo(props: HeroVideoProps) {
     const onKey = (e: KeyboardEvent) => {
       const v = videoRef.current;
       if (e.key === "Escape") {
-        setOpen(false);
+        closeModal();
         return;
       }
       if (e.key === " " || e.key.toLowerCase() === "k") {
@@ -156,7 +165,7 @@ export function HeroVideo(props: HeroVideoProps) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open, muted, isFile]);
+  }, [open, muted, isFile, closeModal]);
 
   useEffect(() => {
     if (!isFile) return;
@@ -168,11 +177,11 @@ export function HeroVideo(props: HeroVideoProps) {
     if (!open || !isMux) return;
     closeRef.current?.focus();
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") closeModal();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open, isMux]);
+  }, [open, isMux, closeModal]);
 
   const togglePlay = useCallback(() => {
     const v = videoRef.current;
@@ -261,6 +270,9 @@ export function HeroVideo(props: HeroVideoProps) {
               aria-labelledby={titleId}
               transition={{ layout: layoutTransition }}
               className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 md:p-10"
+              onClick={(e) => {
+                if (e.target === e.currentTarget) closeModal();
+              }}
             >
               <motion.div
                 initial={reduceMotion ? false : { opacity: 0 }}
@@ -280,14 +292,7 @@ export function HeroVideo(props: HeroVideoProps) {
                     type="button"
                     className="shrink-0 rounded-lg border border-white/20 bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
                     aria-label="Close video"
-                    onClick={() => {
-                      setOpen(false);
-                      const v = videoRef.current;
-                      if (v) {
-                        v.pause();
-                        setPlaying(false);
-                      }
-                    }}
+                    onClick={closeModal}
                   >
                     <X className="size-5" aria-hidden />
                   </button>

@@ -92,7 +92,7 @@ export function ContactSection() {
         return;
       }
 
-      toast.success("Sent. I’ll read it.");
+      toast.success("Message received! I really appreciate you reaching out.");
       form.reset();
     } catch {
       toast.error("Network error — try again.");

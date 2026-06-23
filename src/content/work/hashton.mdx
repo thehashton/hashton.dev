@@ -1,0 +1,44 @@
+---
+title: "Hashton.dev — portfolio site"
+year: "2026"
+role: "Design, frontend, content"
+stack: "Next.js 15, React 19, TypeScript, Tailwind CSS v4, Framer Motion, MDX"
+excerpt: "This site — a contract-and-consulting portfolio with animated hero, Mux intro video, MDX case studies, dark mode, and a paper-and-ink design system built on Tailwind v4 tokens."
+order: 45
+logo: "/images/logos/hashton-logo.png"
+preview: "/images/work/hashton-preview.png"
+cardHref: "https://hashton.dev"
+cardLabel: "Visit site →"
+---
+
+## What this is
+
+**Hashton.dev** is my portfolio and hiring surface — engineered to convert two audiences: engineering leaders evaluating senior frontend judgment, and founders or teams looking for contract or consulting help.
+
+<CaseStudyFigure
+  src="/images/work/hashton-preview.png"
+  alt="Hashton.dev portfolio homepage with hero section and work grid"
+  caption="Hashton.dev — the site you're reading right now."
+/>
+
+## Design system
+
+- **Paper-and-ink palette** with runtime dark mode via CSS custom properties bridged into Tailwind v4 `@theme`
+- **Display typography** (Inter Tight) + mono captions (JetBrains Mono)
+- **Motion with restraint** — scroll reveals, hero video morph, letter-by-letter title, background paths with frosted-glass text panels for readability
+
+## Technical highlights
+
+- **App Router** with static case studies from `src/content/work/*.mdx`
+- **HeroVideo** — Mux-backed teaser with fullscreen modal, keyboard shortcuts, and reduced-motion fallbacks
+- **Contact** — React Hook Form + Zod, Resend API with graceful mailto fallback
+- **SEO** — metadata, OG image, sitemap, JSON-LD `Person` schema
+- **MDX case studies** — `CaseStudyFigure` component for rich project write-ups with screenshots
+
+## Stack
+
+Next.js 15, React 19, TypeScript, Tailwind CSS v4, Framer Motion, shadcn-style UI primitives, Vercel Analytics.
+
+## Meta note
+
+This case study is intentionally self-referential: the portfolio demonstrates the same craft it describes — typography, motion, accessibility, and content architecture working together as a single product surface.

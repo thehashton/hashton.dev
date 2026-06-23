@@ -1,28 +1,105 @@
 ---
-title: "EO Charging — EO Portal"
+title: "EO Charging — EO Cloud"
 year: "2022—2025"
 role: "Lead Frontend Developer"
 stack: "React, TypeScript, micro-frontends, maps, dashboards, accessibility tooling"
-excerpt: "Lead frontend for analytical dashboards, customised maps, and UI libraries across a micro-frontend architecture — with WCAG 2.1 AA governance baked in."
+excerpt: "Lead frontend for EO Cloud — fleet charging dashboards, depot maps, SiteOps, and UI libraries across a micro-frontend architecture, with WCAG 2.1 AA governance baked in."
 order: 10
 logo: "/images/logos/eo-charging.png"
+preview: "/images/work/eo-charging-preview.png"
+cardHref: "https://www.eocharging.com/eo-cloud"
+cardLabel: "View EO Cloud →"
 ---
 
 ## Context
 
-I joined EO Charging as **Lead Frontend Developer** on the Depot Squad responsible for **EO Portal**: fleet operators depend on these interfaces daily for reliability and clarity.
+I joined EO Charging as **Lead Frontend Developer** on the Depot Squad responsible for **[EO Cloud](https://www.eocharging.com/eo-cloud)** — the fleet charging management platform operators rely on daily across depots in the UK, Europe, and beyond. The product spans network-wide administration and on-site depot tooling; my work sat at the intersection of **data-heavy dashboards**, **map-based workflows**, and **shared UI infrastructure** inside a micro-frontend architecture.
 
-## What I owned
+Fleet electrification is unforgiving UX: downtime costs money, power is constrained, and the people using these screens are often under pressure on a depot floor — not at a desk with time to decode a UI.
 
-- **Product-grade dashboards** — turning messy operational data into readable visual surfaces engineers can extend safely.
-- **Maps & bespoke UI** — geography-heavy workflows where performance and clarity compete; both had to win.
-- **Micro-frontend architecture** — boundaries that protect squads from stepping on each other without slowing delivery.
-- **Design ↔ engineering cadence** — regular collaboration with product and design in **Figma** so UI intent survives implementation.
+## SiteOps — depot-first operations
+
+A major focus was **SiteOps**: a redesigned EO Cloud homepage built for on-site depot teams. Instead of burying site-specific detail inside a network-wide view, SiteOps gives a clear, site-scoped picture of vehicles, chargers, layout, and energy use.
+
+<CaseStudyFigure
+  src="/images/work/eo-charging/siteops-whats-new.jpg"
+  alt="EO Cloud SiteOps homepage showing a site-specific depot view with vehicles, chargers, and energy layout"
+  caption="SiteOps — an operational window into the depot, scoped to one site."
+/>
+
+<CaseStudyFigure
+  src="/images/work/eo-charging/siteops-dashboard.jpg"
+  alt="SiteOps dashboard with depot map, charger status, and fleet overview"
+  caption="The SiteOps dashboard — data and insights for on-site business continuity."
+/>
+
+I owned the frontend for surfaces like this: translating Figma intent into performant React, keeping map and list views coherent under real data loads, and making sure the layout held up across viewport sizes used on depot screens.
+
+## Vehicle monitoring & readiness
+
+Depot managers need an at-a-glance view of charging activity — active sessions, available chargers, vehicle state of charge — often on a shared screen in the depot. The **vehicle readiness display** is designed for that: high contrast, real-time updates, and action indicators that support quick decisions.
+
+<CaseStudyFigure
+  src="/images/work/eo-charging/vehicle-monitoring.jpg"
+  alt="Vehicle-centric monitoring UI showing fleet charging status and readiness at a glance"
+  caption="Vehicle readiness display — fleet state of charge for confident depot decisions."
+/>
+
+## Reporting
+
+EO Cloud ships built-in reporting across network performance, energy consumption, charger status, uptime, and more. The challenge on the frontend is making dense operational data **navigable and exportable** without overwhelming users who need answers fast.
+
+<CaseStudyFigure
+  src="/images/work/eo-charging/reporting.jpg"
+  alt="EO Cloud reporting interface with charts and data export options"
+  caption="Reporting — historic energy, uptime, and session data in one place."
+/>
+
+## Charger scheduling
+
+Scheduling supports both manual and automatic programmes so fleets can control total cost of ownership while keeping vehicles charged. The UI had to make complex rules feel legible — what’s scheduled, what’s running, and what happens when constraints change.
+
+<CaseStudyFigure
+  src="/images/work/eo-charging/charger-scheduling.jpg"
+  alt="EO Cloud charger scheduling interface for fleet charging programmes"
+  caption="Charger scheduling — manual and automatic programmes for fleet needs."
+/>
+
+## Account management
+
+Admin users need fine-grained control: assign profiles, restrict access per user, onboard new accounts, and deactivate old ones. I worked on the account management surfaces that make that control practical at scale.
+
+<CaseStudyFigure
+  src="/images/work/eo-charging/account-management.jpg"
+  alt="EO Cloud account management interface for user profiles and access control"
+  caption="Account management — profiles and access control for admin teams."
+/>
+
+## Automatic fault detection
+
+Hardware faults and connectivity issues need to surface quickly — and in EO Cloud’s case, automatically alert the support team to minimise downtime. The frontend work here is about **trustworthy status communication**: making fault states obvious, actionable, and consistent across the product.
+
+<CaseStudyFigure
+  src="/images/work/eo-charging/fault-detection.jpg"
+  alt="EO Cloud automatic fault detection dashboard showing charger health and alerts"
+  caption="Automatic fault detection — monitoring and alerting to reduce on-site downtime."
+/>
+
+## Maps, micro-frontends & shared UI
+
+Beyond individual features, I owned cross-cutting frontend concerns:
+
+- **Custom map layers** for geography-heavy depot and network workflows — performance and clarity both had to win.
+- **Micro-frontend boundaries** so squads could ship without stepping on shared surfaces.
+- **Shared component libraries** that kept dashboards consistent while allowing product-specific extension.
+- **Design ↔ engineering cadence** in Figma so UI intent survived implementation.
 
 ## Accessibility as infrastructure
 
-We treated accessibility like observability: not a launch checkbox. I built **in-house accessibility audit tooling** so we could monitor and test against **WCAG 2.1 AA** continuously — catching regressions before users did.
+We treated accessibility like observability: not a launch checkbox. I built **in-house accessibility audit tooling** so we could monitor and test against **WCAG 2.1 AA** continuously — catching regressions before users did. That tooling later informed **[Lucid](/work/lucid)**, my open-source CLI for project-wide a11y audits.
 
 ## Outcomes (honest framing)
 
-Shipping in energy infrastructure means constraints: legacy surfaces, compliance pressure, and operational reality. The win wasn’t “perfect UI” — it was **systems that stayed accessible and maintainable while the product accelerated**.
+Shipping in energy infrastructure means legacy surfaces, compliance pressure, and operational reality. The win wasn’t “perfect UI” — it was **systems that stayed accessible and maintainable while the product accelerated**, supporting fleets at operators like DHL, Amazon, Tesco, and Stagecoach through software they depend on every day.
+
+See the live product at **[eocharging.com/eo-cloud](https://www.eocharging.com/eo-cloud)**.

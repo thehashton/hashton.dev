@@ -148,6 +148,47 @@
   }
 }
 
+/* True dark: override palette tokens (must be unlayered — layered utilities lose to :root above). */
+:root.dark,
+html.dark {
+  color-scheme: dark;
+
+  --palette-paper: #0e0d0b;
+  --palette-surface: #1a1917;
+  --palette-muted: #232220;
+
+  --palette-ink: #f4f1ea;
+  --palette-ink-50: #191816;
+  --palette-ink-100: #222120;
+  --palette-ink-200: #2e2c28;
+  --palette-ink-300: #45423c;
+  --palette-ink-400: #5c5850;
+  --palette-ink-500: #7a756b;
+  --palette-ink-600: #9a9488;
+  --palette-ink-700: #bab4a8;
+  --palette-ink-800: #dad4c8;
+  --palette-ink-900: #f0ebe2;
+
+  --palette-accent: #d66a4f;
+  --palette-accent-50: #261a17;
+  --palette-accent-100: #3d2822;
+  --palette-accent-600: #b8573e;
+  --palette-accent-foreground: #ffffff;
+
+  --palette-strong: #121110;
+  --palette-on-strong: #faf7f1;
+
+  --palette-shadow-card:
+    0 1px 0 rgb(255 255 255 / 0.04) inset, 0 1px 2px rgb(0 0 0 / 0.35), 0 6px 20px rgb(0 0 0 / 0.42);
+  --palette-shadow-card-hover:
+    0 1px 0 rgb(255 255 255 / 0.05) inset, 0 4px 8px rgb(0 0 0 / 0.35),
+    0 14px 36px rgb(0 0 0 / 0.48);
+  --palette-shadow-input-focus: 0 0 0 3px rgb(214 106 79 / 0.45);
+
+  --selection-bg: color-mix(in oklab, var(--palette-accent) 38%, var(--palette-surface));
+  --selection-fg: var(--palette-ink);
+}
+
 @layer base {
   html {
     width: 100%;
@@ -218,50 +259,6 @@
     background-color: color-mix(in oklab, var(--color-ink) 8%, transparent);
     color: var(--color-ink);
     box-shadow: none;
-  }
-}
-
-/* True dark: override palette tokens (utilities read via @theme → var(--palette-*)). */
-@layer utilities {
-  :root.dark,
-  html.dark {
-    color-scheme: dark;
-
-    --palette-paper: #0e0d0b;
-    --palette-surface: #1a1917;
-    --palette-muted: #232220;
-
-    --palette-ink: #f4f1ea;
-    --palette-ink-50: #191816;
-    --palette-ink-100: #222120;
-    --palette-ink-200: #2e2c28;
-    --palette-ink-300: #45423c;
-    --palette-ink-400: #5c5850;
-    --palette-ink-500: #7a756b;
-    --palette-ink-600: #9a9488;
-    --palette-ink-700: #bab4a8;
-    --palette-ink-800: #dad4c8;
-    --palette-ink-900: #f0ebe2;
-
-    --palette-accent: #d66a4f;
-    --palette-accent-50: #261a17;
-    --palette-accent-100: #3d2822;
-    --palette-accent-600: #b8573e;
-    --palette-accent-foreground: #ffffff;
-
-    --palette-strong: #121110;
-    --palette-on-strong: #faf7f1;
-
-    --palette-shadow-card:
-      0 1px 0 rgb(255 255 255 / 0.04) inset, 0 1px 2px rgb(0 0 0 / 0.35),
-      0 6px 20px rgb(0 0 0 / 0.42);
-    --palette-shadow-card-hover:
-      0 1px 0 rgb(255 255 255 / 0.05) inset, 0 4px 8px rgb(0 0 0 / 0.35),
-      0 14px 36px rgb(0 0 0 / 0.48);
-    --palette-shadow-input-focus: 0 0 0 3px rgb(214 106 79 / 0.45);
-
-    --selection-bg: color-mix(in oklab, var(--palette-accent) 38%, var(--palette-surface));
-    --selection-fg: var(--palette-ink);
   }
 }
 

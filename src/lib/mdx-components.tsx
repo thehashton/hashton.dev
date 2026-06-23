@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ComponentProps } from "react";
 
+import { CaseStudyFigure } from "@/components/mdx/case-study-figure";
 import { cn } from "@/lib/utils";
 
 type MDXComponentMap = NonNullable<
@@ -8,6 +9,7 @@ type MDXComponentMap = NonNullable<
 >;
 
 export const mdxComponents: MDXComponentMap = {
+  CaseStudyFigure,
   h2: ({ className, ...props }) => (
     <h2
       className={cn(

@@ -8,6 +8,16 @@ import { getWorkBySlug, getWorkSlugs } from "@/lib/work";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
+function workLogoFrameClass(slug: string) {
+  return slug === "inkwarden" || slug === "lucid"
+    ? "border-zinc-800/90 bg-zinc-950"
+    : "border-ink/10 bg-paper";
+}
+
+function workLogoPaddingClass(slug: string) {
+  return slug === "inkwarden" ? "rounded-xl p-2.5" : slug === "lucid" ? "rounded-xl p-1.5" : "rounded-xl p-2";
+}
+
 export async function generateStaticParams() {
   return getWorkSlugs().map((slug) => ({ slug }));
 }
@@ -60,19 +70,14 @@ export default async function WorkCaseStudyPage({
             <div
               className={cn(
                 "relative mx-auto h-24 w-28 shrink-0 overflow-hidden rounded-xl border shadow-sm sm:mx-0 sm:h-[6.25rem] sm:w-[7.25rem] md:h-28 md:w-32",
-                page.slug === "inkwarden"
-                  ? "border-zinc-800/90 bg-zinc-950"
-                  : "border-ink/10 bg-paper",
+                workLogoFrameClass(page.slug),
               )}
             >
               <Image
                 src={page.frontmatter.logo}
                 alt={`Logo for ${page.frontmatter.title}`}
                 fill
-                className={cn(
-                  "object-contain",
-                  page.slug === "inkwarden" ? "rounded-xl p-2.5" : "rounded-xl p-2",
-                )}
+                className={cn("object-contain", workLogoPaddingClass(page.slug))}
                 sizes="128px"
               />
             </div>
@@ -114,9 +119,32 @@ export default async function WorkCaseStudyPage({
               </div>
             </div>
             <p className="mt-8 max-w-2xl text-[1.2rem] leading-relaxed text-ink-800">{page.frontmatter.excerpt}</p>
+            {page.frontmatter.cardHref ? (
+              <a
+                href={page.frontmatter.cardHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono mt-8 inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-transparent bg-strong px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-on-strong shadow-sm transition-colors hover:bg-strong/90"
+              >
+                {page.frontmatter.cardLabel ?? "Visit site →"}
+              </a>
+            ) : null}
           </div>
         </div>
       </header>
+
+      {page.frontmatter.preview ? (
+        <div className="relative mt-10 aspect-[16/10] overflow-hidden rounded-2xl border border-ink/10 bg-muted shadow-card">
+          <Image
+            src={page.frontmatter.preview}
+            alt={`Preview of ${page.frontmatter.title}`}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 900px) 100vw, 900px"
+            priority
+          />
+        </div>
+      ) : null}
 
       <div className="mt-14">{page.content}</div>
     </article>

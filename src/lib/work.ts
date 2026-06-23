@@ -14,6 +14,8 @@ export type WorkFrontmatter = {
   order: number;
   /** Square mark on the work list (public path). */
   logo?: string;
+  /** Wide screenshot or product preview on work cards (public path). */
+  preview?: string;
   /** When set, the primary card button opens this URL (e.g. live product). */
   cardHref?: string;
   /** Label for `cardHref` (defaults to “Visit site →”). */

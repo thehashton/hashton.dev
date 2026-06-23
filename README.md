@@ -2,6 +2,8 @@
 
 **Harry Ashton** — Senior frontend engineer (contract & consulting). This repository is the source for my portfolio site; stack and setup are documented below if you need them.
 
+![Portfolio homepage preview](./public/images/hero-preview.png)
+
 ---
 
 ## What’s inside

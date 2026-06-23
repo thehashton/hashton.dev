@@ -1,0 +1,47 @@
+---
+title: "Lucid — accessibility auditing CLI"
+year: "2026"
+role: "Creator, maintainer"
+stack: "TypeScript, Playwright, axe-core, CLI, CI, GitHub Issues"
+excerpt: "Automated accessibility auditing across full web projects — route discovery via sitemap, crawl, or Next.js analysis, axe-core in headless Chromium, JSON reports, and optional GitHub Issue creation."
+order: 5
+logo: "/images/logos/lucid.png"
+preview: "/images/work/lucid-preview.jpg"
+cardHref: "https://www.npmjs.com/package/lucid-a11y"
+cardLabel: "View on npm →"
+---
+
+## What Lucid is
+
+**Lucid** (`lucid-a11y`) audits an entire web project for accessibility violations — not just a single URL. It discovers routes via sitemap, crawl, or Next.js static analysis, runs axe-core checks in headless Chromium, captures screenshots of affected elements, and outputs a terminal summary plus a structured JSON report.
+
+<CaseStudyFigure
+  src="/images/work/lucid-preview.jpg"
+  alt="Lucid accessibility CLI npm package page"
+  caption="Lucid on npm — project-wide a11y audits for any web codebase."
+/>
+
+## Why I built it
+
+At EO Charging I built in-house accessibility audit tooling for WCAG 2.1 AA governance. Lucid packages that mindset for any team: continuous signal, CI-friendly exit codes, and reports engineers can act on without a separate SaaS subscription.
+
+## What it does
+
+- **Route discovery** — sitemap parsing (including nested indexes), same-origin crawl, or Next.js `app/` / `pages/` static analysis
+- **Auditing** — Playwright + axe-core with per-violation screenshots
+- **Reporting** — severity-grouped JSON + terminal summary
+- **GitHub Issues** — optional `--create-issues` to open one issue per rule ID with reproduction steps
+
+## Architecture notes
+
+Lucid is designed for CI: non-zero exit codes on violations, JSON artefacts teams can diff over time, and route discovery that works without manual URL lists. The Next.js analyser understands both App Router and Pages Router conventions so teams on modern stacks get coverage out of the box.
+
+## Try it
+
+```bash
+pnpm add -D lucid-a11y
+npx playwright install chromium
+npx lucid-a11y --sitemap http://localhost:3000/sitemap.xml
+```
+
+Open source on [GitHub](https://github.com/thehashton/Lucid) · MIT licensed.

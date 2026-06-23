@@ -2,31 +2,40 @@
 
 import { Monitor, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+const toggleClassName =
+  "inline-flex size-11 shrink-0 items-center justify-center rounded-md border border-ink/10 bg-paper/80 text-ink shadow-sm transition-colors hover:bg-ink/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink/30";
 
 export function ThemeToggle({ className }: { className?: string }) {
   const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
   const isDark = resolvedTheme === "dark";
 
   return (
-    <Button
+    <button
       type="button"
-      variant="ghost"
       suppressHydrationWarning
-      className={cn(
-        "size-11 min-h-11 min-w-11 shrink-0 rounded-md border border-ink/10 shadow-sm",
-        className,
-      )}
-      aria-pressed={isDark}
-      aria-label="Toggle light or dark appearance"
+      className={cn(toggleClassName, className)}
+      aria-pressed={mounted ? isDark : undefined}
+      aria-label={mounted ? (isDark ? "Switch to light mode" : "Switch to dark mode") : "Toggle appearance"}
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
-      {/* Icons follow `html.dark` (next-themes inline script) via class-based `dark:` — never an empty mount placeholder. */}
-      <Moon className="size-5 dark:hidden" aria-hidden />
-      <Sun className="hidden size-5 dark:inline" aria-hidden />
-    </Button>
+      {mounted ? (
+        isDark ? (
+          <Sun className="size-5 shrink-0" aria-hidden />
+        ) : (
+          <Moon className="size-5 shrink-0" aria-hidden />
+        )
+      ) : (
+        <Moon className="size-5 shrink-0 opacity-0" aria-hidden />
+      )}
+    </button>
   );
 }
 
@@ -40,12 +49,11 @@ export function MatchSystemThemeButton({
   const { setTheme } = useTheme();
 
   return (
-    <Button
+    <button
       type="button"
-      variant="ghost"
       suppressHydrationWarning
       className={cn(
-        "caption-mono min-h-11 w-full justify-center gap-2 rounded-md border border-ink/10 py-3 text-ink-600 hover:bg-ink/5 hover:text-ink",
+        "caption-mono inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md border border-ink/10 py-3 text-ink-600 transition-colors hover:bg-ink/5 hover:text-ink",
         className,
       )}
       onClick={() => {
@@ -55,6 +63,6 @@ export function MatchSystemThemeButton({
     >
       <Monitor className="size-4 shrink-0" aria-hidden />
       Match system
-    </Button>
+    </button>
   );
 }

@@ -11,6 +11,7 @@ import { headerShellClass } from "@/lib/layout-shell";
 import { sectionNav } from "@/lib/nav";
 import { contactHref, logoHref, sectionHref } from "@/lib/nav-href";
 import { site } from "@/lib/site";
+import { ThemeToggle } from "@/components/theme/theme-controls";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -88,7 +89,7 @@ export function Header() {
               width={841}
               height={267}
               priority
-              className="h-12 w-auto max-w-[min(14rem,68vw)] object-contain object-left sm:h-16 sm:max-w-[min(19rem,78vw)] md:h-[4.75rem] lg:h-[6.75rem] lg:max-w-[min(36rem,92vw)]"
+              className="h-12 w-auto max-w-[min(14rem,68vw)] object-contain object-left dark:invert sm:h-16 sm:max-w-[min(19rem,78vw)] md:h-[4.75rem] lg:h-[6.75rem] lg:max-w-[min(36rem,92vw)]"
             />
           </Link>
 
@@ -97,6 +98,7 @@ export function Header() {
           </div>
 
           <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 md:gap-3">
+            <ThemeToggle />
             {HEADER_SOCIAL.map(({ href, label, Icon, iconClassName }) => (
               <Tooltip key={href}>
                 <TooltipTrigger asChild>
@@ -154,6 +156,9 @@ export function Header() {
             </SheetClose>
           </div>
           <NavLinks pathname={pathname} variant="drawer" onNavigate={() => setOpen(false)} />
+          <div className="flex justify-center border-t border-ink/10 pt-6">
+            <ThemeToggle />
+          </div>
           <div className="mt-auto flex flex-col gap-8 border-t border-ink/10 pt-6">
             <div className="flex flex-col gap-3">
               <p className="caption-mono text-ink-600">Contact</p>

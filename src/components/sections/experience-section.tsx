@@ -35,7 +35,14 @@ export function ExperienceSection() {
                 <article className={i < experience.length - 1 ? "pb-16" : ""}>
                   <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
                     <h3 className="font-sans text-2xl font-bold tracking-tight text-ink">{job.role}</h3>
-                    {job.href ? (
+                    {job.workSlug ? (
+                      <Link
+                        href={`/work/${job.workSlug}`}
+                        className="font-mono text-sm font-semibold tracking-wide text-ink underline decoration-accent/50 underline-offset-4 transition-colors hover:text-accent-600"
+                      >
+                        {job.company}
+                      </Link>
+                    ) : job.href ? (
                       <Link
                         href={job.href}
                         target="_blank"

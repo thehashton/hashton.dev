@@ -1,36 +1,135 @@
 ---
 title: "Inkwarden — AI writing companion"
-year: "2024—Present"
+year: "2026—Present"
 role: "Co-founder, product & frontend"
 stack: "Next.js, TypeScript, AI, writing tools, lore & worldbuilding"
-excerpt: "Inkwarden is an AI-powered writing companion that helps you build rich worlds, organize your lore, and interact with your characters as you create your story."
+excerpt: "Co-founded Inkwarden — an AI writing companion with connected worlds, character sheets, timeline-aware suggestions, admin tooling, and a calm interface built for long-form fiction."
 order: 40
 logo: "/images/logos/inkwarden.png"
 preview: "/images/work/inkwarden-preview.png"
+previewCaption: "Inkwarden — worldbuilding and novel writing with a connected wiki, timeline, and character tooling."
 cardHref: "https://inkwarden.dev/"
-cardLabel: "Visit Inkwarden →"
+cardLabel: "Inkwarden"
 ---
 
 ## What Inkwarden is
 
-**[Inkwarden](https://inkwarden.dev/)** is a product for writers who want structure without killing creativity: worlds, lore, and cast that stay coherent as the manuscript grows.
+**[Inkwarden](https://inkwarden.dev/)** is a product for writers who want structure without killing creativity: worlds, lore, and cast that stay coherent as the manuscript grows. I co-founded it and own the product and frontend — information hierarchy, editor UX, and the AI-assisted flows that sit on top without getting in the way of the writing.
+
+The app combines a connected wiki, timeline, and character tooling — the kind of interconnected data model that punishes sloppy frontend architecture. What's shareable is the **live product** and how it behaves for real writing sessions.
+
+## Landing & first impression
+
+The marketing site leads with the promise: worldbuilding and novel writing in one place. The hero shows the actual workspace — lore, characters, and timeline in a three-pane layout — so visitors see product, not pitch deck.
 
 <CaseStudyFigure
-  src="/images/work/inkwarden-preview.png"
-  alt="Inkwarden landing page and writing workspace for worldbuilding and novel writing"
-  caption="Inkwarden — worldbuilding, timeline, and characters in one place."
+  src="/images/work/inkwarden/marketing-hero.png"
+  alt="Inkwarden marketing page with hero copy and a preview of the three-pane writing workspace"
+  caption="Landing page — connected wiki, timeline, and characters surfaced immediately in the hero."
+  aspect="auto"
 />
 
-## What I’m building toward
+## Workspace & AI companion
+
+Inside a world, the workspace is organised around assets: encyclopedia entries, characters, places, and drafts. Search, sync status, and a formatting toolbar stay visible without crowding the prose.
+
+<CaseStudyFigure
+  src="/images/work/inkwarden/workspace-ai.gif"
+  alt="Inkwarden workspace with lore list, character notes editor, and AI continuity suggestion"
+  caption="Workspace — lore navigation, character notes, and Inkwarden flagging a timeline contradiction."
+  aspect="auto"
+/>
+
+The AI companion reads your world's context — not generic chatbot summaries. It can flag continuity issues, suggest lore expansions, and answer from what the project actually knows.
+
+## Worlds & character sheets
+
+Each world scopes its own cast and locations. Character sheets hold voice notes, backstory, and draft copy in one place, with quick actions to save, open chat, or jump to the full editor.
+
+<CaseStudyFigure
+  src="/images/work/inkwarden/world-character-sheet.png"
+  alt="Inkwarden world workspace showing a character sheet for Hugo with notes and formatting toolbar"
+  caption="Character sheet — voice, backstory, and draft notes for a cast member inside the Alterun world."
+  aspect="auto"
+/>
+
+## Writer dashboard & profile
+
+Signed-in writers land on a calm dashboard: worlds, works, and billing as clear entry points — no clutter between sessions.
+
+<CaseStudyFigure
+  src="/images/work/inkwarden/dashboard.png"
+  alt="Inkwarden writer dashboard with cards for Worlds, Works, and Billing"
+  caption="Writer dashboard — worlds, manuscripts, and billing from one workspace hub."
+  aspect="auto"
+/>
+
+Profile settings let writers personalise how Inkwarden addresses them — name, region, use case, and interface language — with avatar customisation alongside.
+
+<CaseStudyFigure
+  src="/images/work/inkwarden/profile-settings.png"
+  alt="Inkwarden profile settings form with avatar customisation panel"
+  caption="Profile settings — personalisation, avatar, region, and language preferences."
+  aspect="auto"
+/>
+
+## Admin — content & operations
+
+On the admin side, I built tooling to run the product: blog and article publishing, user management, feature flags, and feedback review.
+
+The blog CMS supports bulk scheduling, slug management, and a rich editor with preview — so SEO articles and product updates ship from the same system.
+
+<CaseStudyFigure
+  src="/images/work/inkwarden/blog-posts.png"
+  alt="Inkwarden admin blog posts table with bulk schedule controls and live status badges"
+  caption="Blog admin — bulk scheduling, slugs, and live status for every post."
+  aspect="auto"
+/>
+
+Individual posts open in a split editor: markdown-style body on the left, metadata — title, slug, excerpt, featured image, publish target — on the right.
+
+<CaseStudyFigure
+  src="/images/work/inkwarden/blog-editor.png"
+  alt="Inkwarden blog post editor with formatting toolbar and metadata sidebar"
+  caption="Post editor — rich body editing with SEO metadata and publish controls in one view."
+  aspect="auto"
+/>
+
+User administration supports search and filters by tier, role, subscription state, and onboarding — the operational view for supporting a growing writer base.
+
+<CaseStudyFigure
+  src="/images/work/inkwarden/users-admin.png"
+  alt="Inkwarden admin users table with tier and subscription filters"
+  caption="User admin — search, tier filters, and subscription status at a glance. User data redacted."
+  aspect="auto"
+/>
+
+The admin overview ties waitlist, feature flags, and early-access controls together — a single place to approve writers and iterate without destabilising the main app.
+
+<CaseStudyFigure
+  src="/images/work/inkwarden/admin-overview.png"
+  alt="Inkwarden admin overview with waitlist and feature flag cards"
+  caption="Admin overview — waitlist operations and feature flag management. Account details redacted."
+  aspect="auto"
+/>
+
+## In-product feedback
+
+Writers can send feedback from anywhere in the app. Submissions capture page context automatically so bug reports and feature requests arrive with reproduction detail.
+
+<CaseStudyFigure
+  src="/images/work/inkwarden/feedback-modal.png"
+  alt="Inkwarden send feedback modal with message field and submit button"
+  caption="Feedback modal — contextual submissions tied to the screen the writer was on. Internal paths redacted."
+  aspect="auto"
+/>
+
+## What I'm building toward
 
 - **Companion workflows** — AI that supports drafting and continuity without replacing author voice.
 - **A calm interface** — surfaces that stay legible when projects get large and interconnected.
 - **Shipping discipline** — the codebase stays private, but the product has to earn trust in public: performance, clarity, and respect for user data.
 
-## Product surfaces
-
-The app combines a connected wiki, timeline, and character tooling — the kind of interconnected data model that punishes sloppy frontend architecture. I own the product and frontend: information hierarchy, editor UX, and the AI-assisted flows that sit on top without getting in the way of the writing.
-
 ## Note on the build
 
-The repository is private. What’s shareable is the **live product** and how it behaves for real writing sessions — not a public source tour. The case study is the product itself: try it at [inkwarden.dev](https://inkwarden.dev/).
+The repository is private. This case study is the product itself — screenshots with user data redacted, and the live experience at [inkwarden.dev](https://inkwarden.dev/).

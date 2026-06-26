@@ -11,3 +11,7 @@ export const headerShellClass =
 
 export const shellProseClass =
   "mx-auto w-full min-w-0 max-w-[900px] px-3 sm:px-5 md:px-6";
+
+/** Case study article — wider rail, roomier vertical rhythm. */
+export const shellCaseStudyClass =
+  "mx-auto w-full min-w-0 max-w-[68rem] px-3 sm:px-5 md:px-6 lg:px-8";

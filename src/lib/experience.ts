@@ -2,6 +2,8 @@ export type ExperienceItem = {
   id: string;
   role: string;
   company: string;
+  /** Portfolio case study slug — links to /work/[slug] when set. */
+  workSlug?: string;
   href?: string;
   /** Square mark shown in compact timelines (public path). */
   logo?: string;
@@ -15,7 +17,7 @@ export const experience: ExperienceItem[] = [
     id: "fen",
     role: "Co-Founder & Lead Coach",
     company: "Front End Now",
-    href: "https://learnfrontendnow.com",
+    workSlug: "front-end-now",
     logo: "/images/logos/front-end-now.png",
     period: "Mar 2023 — Present",
     location: "Remote",
@@ -26,7 +28,7 @@ export const experience: ExperienceItem[] = [
     id: "eo",
     role: "Lead Frontend Developer",
     company: "EO Charging",
-    href: "https://www.linkedin.com/company/eo-charging",
+    workSlug: "eo-charging",
     logo: "/images/logos/eo-charging.png",
     period: "Sep 2022 — May 2025",
     location: "Stowmarket, UK, remote",
@@ -37,7 +39,7 @@ export const experience: ExperienceItem[] = [
     id: "thrive",
     role: "Senior Product Engineer",
     company: "THRIVE LXP",
-    href: "https://www.linkedin.com/company/thrivelearning",
+    workSlug: "thrive-lxp",
     logo: "/images/logos/thrive-lxp.png",
     period: "Jun 2020 — Sep 2022",
     location: "Nottingham, UK, remote",

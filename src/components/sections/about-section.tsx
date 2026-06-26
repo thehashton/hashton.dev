@@ -72,7 +72,14 @@ export function AboutSection() {
                         ) : null}
                         <div className="min-w-0 flex-1 text-left">
                           <h3 className="font-sans text-lg font-bold tracking-tight text-ink md:text-xl">{job.role}</h3>
-                          {job.href ? (
+                          {job.workSlug ? (
+                            <Link
+                              href={`/work/${job.workSlug}`}
+                              className="mt-1.5 inline-block font-mono text-sm font-semibold tracking-wide text-ink underline decoration-accent/50 underline-offset-4 transition-colors hover:text-accent-600"
+                            >
+                              {job.company}
+                            </Link>
+                          ) : job.href ? (
                             <Link
                               href={job.href}
                               target="_blank"

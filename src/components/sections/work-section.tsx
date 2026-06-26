@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BookOpen, ChevronRight } from "lucide-react";
 
 import { SectionLabel } from "@/components/sections/section-label";
 import { Reveal } from "@/components/motion/reveal";
+import { StackTagList } from "@/components/ui/stack-tag";
+import { ExternalProjectLink } from "@/components/work/external-project-link";
 import { shellClass } from "@/lib/layout-shell";
 import { getWorkMetaList } from "@/lib/work";
 import { cn } from "@/lib/utils";
@@ -29,7 +32,7 @@ export async function WorkSection() {
             <h2 className="font-sans text-[2.5rem] font-bold leading-none tracking-tight text-ink md:text-[3rem]">
               Proof in production.
             </h2>
-            <p className="caption-mono max-w-md text-ink-600">
+            <p className="caption-mono max-w-md text-secondary">
               Case studies are narrative wrappers around constraints — accessibility, architecture, and taste under
               pressure.
             </p>
@@ -51,13 +54,13 @@ export async function WorkSection() {
                     className="relative z-0 block w-full shrink-0 border-b border-ink/10 bg-muted outline-none ring-offset-2 ring-offset-surface focus-visible:ring-2 focus-visible:ring-ink/30"
                   >
                     {w.preview ? (
-                      <div className="relative aspect-[16/10] overflow-hidden">
+                      <div className="relative aspect-[1024/590] overflow-hidden bg-muted">
                         <Image
                           src={w.preview}
                           alt=""
                           role="presentation"
                           fill
-                          className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                          className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.02]"
                           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                         />
                       </div>
@@ -86,7 +89,9 @@ export async function WorkSection() {
 
                   <div className="relative flex min-w-0 flex-1 flex-col p-5 sm:p-6">
                     <div className="flex items-start justify-between gap-3">
-                      <p className="caption-mono shrink-0 text-ink-500">{w.year}</p>
+                      <p className="font-mono shrink-0 text-[0.9375rem] font-bold leading-snug tracking-normal text-ink sm:text-base">
+                        {w.year}
+                      </p>
                       <div className="flex min-w-0 flex-wrap justify-end gap-1">
                         {w.role.split(/,\s*/).map((raw, idx) => {
                           const part = raw.trim();
@@ -112,44 +117,34 @@ export async function WorkSection() {
                       </Link>
                     </h3>
 
-                    <div className="mt-4 flex flex-wrap gap-1.5">
-                      {w.stack.split(/,\s*/).map((raw) => {
-                        const tag = raw.trim();
-                        if (!tag) return null;
-                        return (
-                          <span
-                            key={`${w.slug}-${tag}`}
-                            className="inline-flex items-center rounded-full border border-accent/40 bg-accent/10 px-2 py-1 font-mono text-[9px] font-semibold uppercase leading-none tracking-[0.12em] text-accent sm:text-[10px]"
-                          >
-                            {tag}
-                          </span>
-                        );
-                      })}
-                    </div>
+                    <StackTagList stack={w.stack} className="mt-4" />
 
-                    <p className="mt-4 flex-1 text-base leading-relaxed text-ink-800">{w.excerpt}</p>
+                    <p className="mt-4 flex-1 text-base leading-relaxed text-ink-700">{w.excerpt}</p>
 
-                    <div className="relative mt-6 flex flex-col gap-2.5">
+                    <div
+                      className={cn(
+                        "relative mt-6 flex gap-2",
+                        w.cardHref ? "flex-row items-stretch" : "flex-col",
+                      )}
+                    >
                       {w.cardHref ? (
-                        <Link
+                        <ExternalProjectLink
                           href={w.cardHref}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-mono inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-transparent bg-strong px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-on-strong shadow-sm transition-colors hover:bg-strong/90 sm:text-sm"
-                        >
-                          {w.cardLabel ?? "Visit site →"}
-                        </Link>
+                          label={w.cardLabel ?? "Site"}
+                          className="min-w-0 flex-1"
+                        />
                       ) : null}
                       <Link
                         href={`/work/${w.slug}`}
                         className={cn(
-                          "font-mono inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] transition-colors sm:text-sm",
-                          w.cardHref
-                            ? "border-2 border-ink/15 bg-paper text-ink shadow-sm hover:border-accent/45 hover:bg-accent/10 hover:text-accent-600"
-                            : "border border-transparent bg-accent text-accent-foreground shadow-md hover:bg-accent-600 hover:shadow-lg",
+                          "font-mono inline-flex min-h-10 items-center justify-center gap-1.5 rounded-full px-3.5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] transition-colors sm:text-xs",
+                          "border border-transparent bg-accent text-accent-foreground shadow-md hover:bg-accent-600 hover:shadow-lg",
+                          w.cardHref ? "min-w-0 flex-1" : "w-full",
                         )}
                       >
-                        Read case study →
+                        <BookOpen className="size-3.5 shrink-0" aria-hidden />
+                        Case study
+                        <ChevronRight className="size-3.5 shrink-0 opacity-80" aria-hidden />
                       </Link>
                     </div>
                   </div>

@@ -6,7 +6,7 @@ import { Mail, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-import { IconGithub, IconInstagram, IconLinkedIn, IconX, IconYoutube } from "@/components/icons/brands";
+import { BrandIcon, type BrandName } from "@/components/icons/brands";
 import { headerShellClass } from "@/lib/layout-shell";
 import { sectionNav } from "@/lib/nav";
 import { contactHref, logoHref, sectionHref } from "@/lib/nav-href";
@@ -57,13 +57,13 @@ function NavLinks({
   );
 }
 
-const HEADER_SOCIAL = [
-  { href: site.links.x, label: "X", Icon: IconX, iconClassName: "scale-[0.97]" },
-  { href: site.links.github, label: "GitHub", Icon: IconGithub, iconClassName: "scale-[1.04]" },
-  { href: site.links.linkedin, label: "LinkedIn", Icon: IconLinkedIn, iconClassName: "scale-[1.02]" },
-  { href: site.links.instagram, label: "Instagram", Icon: IconInstagram, iconClassName: "scale-[0.97]" },
-  { href: site.links.youtube, label: "YouTube", Icon: IconYoutube, iconClassName: "scale-[1.14]" },
-] as const;
+const HEADER_SOCIAL: { href: string; label: string; name: BrandName }[] = [
+  { href: site.links.x, label: "X", name: "x" },
+  { href: site.links.github, label: "GitHub", name: "github" },
+  { href: site.links.linkedin, label: "LinkedIn", name: "linkedin" },
+  { href: site.links.instagram, label: "Instagram", name: "instagram" },
+  { href: site.links.youtube, label: "YouTube", name: "youtube" },
+];
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -99,7 +99,7 @@ export function Header() {
 
           <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 md:gap-3">
             <ThemeToggle />
-            {HEADER_SOCIAL.map(({ href, label, Icon, iconClassName }) => (
+            {HEADER_SOCIAL.map(({ href, label, name }) => (
               <Tooltip key={href}>
                 <TooltipTrigger asChild>
                   <Link
@@ -109,7 +109,7 @@ export function Header() {
                     className="hidden size-11 items-center justify-center rounded-md border border-ink/10 transition-colors hover:bg-ink/5 lg:flex"
                     aria-label={label}
                   >
-                    <Icon className={cn("size-6 shrink-0 origin-center", iconClassName)} />
+                    <BrandIcon name={name} />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" sideOffset={8}>
@@ -120,7 +120,7 @@ export function Header() {
             <Button variant="accent" className="hidden shrink-0 !min-h-11 !min-w-0 !px-3.5 !py-2 !text-base lg:inline-flex" asChild>
               <Link href={contactHref(pathname)} className="inline-flex items-center gap-1.5">
                 <Mail className="size-4" aria-hidden />
-                Hire me
+                Contact
               </Link>
             </Button>
             <SheetTrigger asChild>
@@ -179,7 +179,7 @@ export function Header() {
               </SheetClose>
             </div>
             <div className="grid w-full grid-cols-2 gap-2 sm:gap-3">
-              {HEADER_SOCIAL.map(({ href, label, Icon, iconClassName }, i) => (
+              {HEADER_SOCIAL.map(({ href, label, name }, i) => (
                 <div
                   key={href}
                   className={cn(
@@ -196,7 +196,7 @@ export function Header() {
                         className="inline-flex w-full min-w-0 items-center justify-center gap-2 px-1"
                         aria-label={label}
                       >
-                        <Icon className={cn("size-4 shrink-0 origin-center", iconClassName)} />
+                        <BrandIcon name={name} size="sm" />
                         {label === "X" ? null : <span className="min-w-0 truncate">{label}</span>}
                       </Link>
                     </Button>

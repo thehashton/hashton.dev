@@ -231,6 +231,19 @@ html.dark {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     line-height: var(--text-caption--line-height);
+    color: var(--palette-ink-700);
+  }
+
+  html.dark .caption-mono {
+    color: var(--palette-ink-600);
+  }
+
+  .text-secondary {
+    color: var(--palette-ink-700);
+  }
+
+  html.dark .text-secondary {
+    color: var(--palette-ink-600);
   }
 
   .display-text {

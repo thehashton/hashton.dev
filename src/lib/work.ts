@@ -16,6 +16,8 @@ export type WorkFrontmatter = {
   logo?: string;
   /** Wide screenshot or product preview on work cards (public path). */
   preview?: string;
+  /** Description shown below the hero preview image on case study pages. */
+  previewCaption?: string;
   /** When set, the primary card button opens this URL (e.g. live product). */
   cardHref?: string;
   /** Label for `cardHref` (defaults to “Visit site →”). */

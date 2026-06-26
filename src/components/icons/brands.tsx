@@ -2,6 +2,56 @@ import { siInstagram, siX, siYoutube } from "simple-icons";
 
 import { cn } from "@/lib/utils";
 
+export type BrandName = "x" | "github" | "linkedin" | "instagram" | "youtube";
+
+const svgBase = "block size-full origin-center";
+
+/** Subtle per-mark optical tuning inside a fixed icon box. */
+export const brandOpticalClass: Record<BrandName, string> = {
+  x: "scale-[0.98]",
+  github: "scale-[1.04]",
+  linkedin: "scale-[1.06]",
+  instagram: "scale-[0.96]",
+  youtube: "scale-[1.08]",
+};
+
+export function BrandIcon({
+  name,
+  size = "md",
+  className,
+  title,
+}: {
+  name: BrandName;
+  size?: "sm" | "md";
+  className?: string;
+  title?: string;
+}) {
+  const boxClass = size === "md" ? "size-6" : "size-4";
+  const glyphClass =
+    name === "youtube"
+      ? size === "md"
+        ? "size-[1.45rem]"
+        : "size-[0.95rem]"
+      : size === "md"
+        ? "size-[1.35rem]"
+        : "size-3.5";
+
+  return (
+    <span
+      className={cn("inline-flex shrink-0 items-center justify-center", boxClass, className)}
+      aria-hidden={title ? undefined : true}
+    >
+      <span className={cn("inline-flex items-center justify-center", glyphClass, brandOpticalClass[name])}>
+        {name === "x" ? <IconX title={title} /> : null}
+        {name === "github" ? <IconGithub title={title} /> : null}
+        {name === "linkedin" ? <IconLinkedIn title={title} /> : null}
+        {name === "instagram" ? <IconInstagram title={title} /> : null}
+        {name === "youtube" ? <IconYoutube title={title} /> : null}
+      </span>
+    </span>
+  );
+}
+
 export function IconX({
   className,
   title,
@@ -10,11 +60,7 @@ export function IconX({
   title?: string;
 }) {
   return (
-    <svg
-      className={cn("origin-center", className)}
-      viewBox="0 0 24 24"
-      aria-hidden={title ? undefined : true}
-    >
+    <svg className={cn(svgBase, className)} viewBox="0 0 24 24" aria-hidden={title ? undefined : true}>
       {title ? <title>{title}</title> : null}
       <path fill="currentColor" d={siX.path} />
     </svg>
@@ -29,7 +75,7 @@ export function IconInstagram({
   title?: string;
 }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" aria-hidden={title ? undefined : true}>
+    <svg className={cn(svgBase, className)} viewBox="0 0 24 24" aria-hidden={title ? undefined : true}>
       {title ? <title>{title}</title> : null}
       <path fill="currentColor" d={siInstagram.path} />
     </svg>
@@ -44,11 +90,7 @@ export function IconYoutube({
   title?: string;
 }) {
   return (
-    <svg
-      className={cn("origin-center", className)}
-      viewBox="0 0 24 24"
-      aria-hidden={title ? undefined : true}
-    >
+    <svg className={cn(svgBase, className)} viewBox="0 0 24 24" aria-hidden={title ? undefined : true}>
       {title ? <title>{title}</title> : null}
       <path fill="currentColor" d={siYoutube.path} />
     </svg>
@@ -63,7 +105,7 @@ export function IconGithub({
   title?: string;
 }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" aria-hidden={title ? undefined : true}>
+    <svg className={cn(svgBase, className)} viewBox="0 0 24 24" aria-hidden={title ? undefined : true}>
       {title ? <title>{title}</title> : null}
       <path
         fill="currentColor"
@@ -81,11 +123,11 @@ export function IconLinkedIn({
   title?: string;
 }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" aria-hidden={title ? undefined : true}>
+    <svg className={cn(svgBase, className)} viewBox="0 0 24 24" aria-hidden={title ? undefined : true}>
       {title ? <title>{title}</title> : null}
       <path
         fill="currentColor"
-        d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8h4V23h-4V8Zm7.5 0h3.84v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V23h-4v-6.07c0-1.45-.03-3.32-2.02-3.32-2.02 0-2.33 1.58-2.33 3.21V23h-4V8Z"
+        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
       />
     </svg>
   );

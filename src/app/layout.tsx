@@ -3,7 +3,6 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { Footer } from "@/components/layout/footer";
-import { GridOverlay } from "@/components/layout/grid-overlay";
 import { Header } from "@/components/layout/header";
 import { JsonLd } from "@/components/json-ld";
 import { Providers } from "@/components/providers";
@@ -63,7 +62,6 @@ export default function RootLayout({
         <JsonLd />
         <Providers>
           <div className="relative min-h-screen w-full max-w-none">
-            <GridOverlay />
             <div className="relative z-10 flex min-h-screen w-full flex-col items-stretch">
               <Header />
               <main className="w-full min-w-0 flex-1">{children}</main>

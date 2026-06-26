@@ -28,12 +28,12 @@ export function ThemeToggle({ className }: { className?: string }) {
     >
       {mounted ? (
         isDark ? (
-          <Sun className="size-5 shrink-0" aria-hidden />
+          <Sun className="size-[1.35rem] shrink-0" aria-hidden />
         ) : (
-          <Moon className="size-5 shrink-0" aria-hidden />
+          <Moon className="size-[1.35rem] shrink-0" aria-hidden />
         )
       ) : (
-        <Moon className="size-5 shrink-0 opacity-0" aria-hidden />
+        <Moon className="size-[1.35rem] shrink-0 opacity-0" aria-hidden />
       )}
     </button>
   );

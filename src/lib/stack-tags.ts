@@ -1,20 +1,6 @@
 import type { CSSProperties } from "react";
 import type { LucideIcon } from "lucide-react";
-import {
-  Accessibility,
-  BookOpen,
-  Bot,
-  Boxes,
-  Briefcase,
-  Code2,
-  LayoutDashboard,
-  Map,
-  PenLine,
-  Puzzle,
-  Terminal,
-  TestTube2,
-  Users,
-} from "lucide-react";
+import { Accessibility, Bot, Code2, Terminal, TestTube2 } from "lucide-react";
 import type { SimpleIcon } from "simple-icons";
 import {
   siCss,
@@ -22,17 +8,23 @@ import {
   siFramer,
   siGithub,
   siGithubactions,
+  siGraphql,
   siHtml5,
   siJavascript,
+  siJest,
   siMdx,
   siMui,
   siNextdotjs,
+  siNodedotjs,
   siNpm,
+  siPostgresql,
   siReact,
   siStorybook,
   siTailwindcss,
+  siTestinglibrary,
   siTypescript,
   siVercel,
+  siWebpack,
 } from "simple-icons";
 
 export type StackTagIcon =
@@ -82,7 +74,18 @@ const TAG_LOOKUP: Record<string, ResolvedStackTag> = {
   npm: { label: "npm", brandHex: siNpm.hex, icon: { type: "brand", icon: siNpm } },
   github: { label: "GitHub", brandHex: siGithub.hex, icon: { type: "brand", icon: siGithub } },
   "github issues": { label: "GitHub Issues", brandHex: siGithub.hex, icon: { type: "brand", icon: siGithub } },
+  "github api": { label: "GitHub API", brandHex: siGithub.hex, icon: { type: "brand", icon: siGithub } },
   ci: { label: "CI", brandHex: siGithubactions.hex, icon: { type: "brand", icon: siGithubactions } },
+  "node js": { label: "Node.js", brandHex: siNodedotjs.hex, icon: { type: "brand", icon: siNodedotjs } },
+  nodejs: { label: "Node.js", brandHex: siNodedotjs.hex, icon: { type: "brand", icon: siNodedotjs } },
+  postgresql: { label: "PostgreSQL", brandHex: siPostgresql.hex, icon: { type: "brand", icon: siPostgresql } },
+  postgres: { label: "PostgreSQL", brandHex: siPostgresql.hex, icon: { type: "brand", icon: siPostgresql } },
+  webpack: { label: "Webpack", brandHex: siWebpack.hex, icon: { type: "brand", icon: siWebpack } },
+  jest: { label: "Jest", brandHex: siJest.hex, icon: { type: "brand", icon: siJest } },
+  graphql: { label: "GraphQL", brandHex: siGraphql.hex, icon: { type: "brand", icon: siGraphql } },
+  openai: { label: "OpenAI", brandHex: "10A37F", icon: { type: "lucide", icon: Bot, color: "10A37F" } },
+  "react testing library": { label: "Testing Library", brandHex: siTestinglibrary.hex, icon: { type: "brand", icon: siTestinglibrary } },
+  vercel: { label: "Vercel", brandHex: siVercel.hex, icon: { type: "brand", icon: siVercel } },
   playwright: {
     label: "Playwright",
     brandHex: "2EAD33",
@@ -94,61 +97,6 @@ const TAG_LOOKUP: Record<string, ResolvedStackTag> = {
     icon: { type: "lucide", icon: Accessibility, color: "0077C8" },
   },
   cli: { label: "CLI", brandHex: "64748B", icon: { type: "lucide", icon: Terminal, color: "64748B" } },
-  "micro frontends": {
-    label: "Micro-frontends",
-    brandHex: "8B5CF6",
-    icon: { type: "lucide", icon: Puzzle, color: "8B5CF6" },
-  },
-  maps: { label: "Maps", brandHex: "4285F4", icon: { type: "lucide", icon: Map, color: "4285F4" } },
-  dashboards: {
-    label: "Dashboards",
-    brandHex: "0EA5E9",
-    icon: { type: "lucide", icon: LayoutDashboard, color: "0EA5E9" },
-  },
-  "accessibility tooling": {
-    label: "Accessibility",
-    brandHex: "0077C8",
-    icon: { type: "lucide", icon: Accessibility, color: "0077C8" },
-  },
-  accessibility: {
-    label: "Accessibility",
-    brandHex: "0077C8",
-    icon: { type: "lucide", icon: Accessibility, color: "0077C8" },
-  },
-  "design systems": {
-    label: "Design systems",
-    brandHex: "EC4899",
-    icon: { type: "lucide", icon: Boxes, color: "EC4899" },
-  },
-  testing: { label: "Testing", brandHex: "16A34A", icon: { type: "lucide", icon: TestTube2, color: "16A34A" } },
-  ai: { label: "AI", brandHex: "10A37F", icon: { type: "lucide", icon: Bot, color: "10A37F" } },
-  "writing tools": {
-    label: "Writing tools",
-    brandHex: "D97706",
-    icon: { type: "lucide", icon: PenLine, color: "D97706" },
-  },
-  "lore worldbuilding": {
-    label: "Worldbuilding",
-    brandHex: "7C3AED",
-    icon: { type: "lucide", icon: BookOpen, color: "7C3AED" },
-  },
-  curriculum: {
-    label: "Curriculum",
-    brandHex: "2563EB",
-    icon: { type: "lucide", icon: BookOpen, color: "2563EB" },
-  },
-  community: { label: "Community", brandHex: "0891B2", icon: { type: "lucide", icon: Users, color: "0891B2" } },
-  "career systems": {
-    label: "Career systems",
-    brandHex: "CA8A04",
-    icon: { type: "lucide", icon: Briefcase, color: "CA8A04" },
-  },
-  "content architecture": {
-    label: "Content",
-    brandHex: siMdx.hex,
-    icon: { type: "brand", icon: siMdx },
-  },
-  vercel: { label: "Vercel", brandHex: siVercel.hex, icon: { type: "brand", icon: siVercel } },
 };
 
 export function resolveStackTag(raw: string): ResolvedStackTag {

@@ -117,7 +117,7 @@ export async function WorkSection() {
                       </Link>
                     </h3>
 
-                    <StackTagList stack={w.stack} className="mt-4" />
+                    <StackTagList stack={w.stack} className="mt-4" iconOnly />
 
                     <p className="mt-4 flex-1 text-base leading-relaxed text-ink-700">{w.excerpt}</p>
 

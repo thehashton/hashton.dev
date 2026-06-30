@@ -15,7 +15,7 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     id: "fen",
-    role: "Co-Founder & Lead Coach",
+    role: "Lead Coach and Co-Founder",
     company: "Front End Now",
     workSlug: "front-end-now",
     logo: "/images/logos/front-end-now.png",

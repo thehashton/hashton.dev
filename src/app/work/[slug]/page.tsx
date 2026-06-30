@@ -113,20 +113,13 @@ export default async function WorkCaseStudyPage({
             {page.frontmatter.title}
           </h1>
 
-          <div className="mt-4 flex flex-wrap justify-center gap-1.5 sm:mt-5">
-            {page.frontmatter.role.split(/,\s*/).map((raw, idx) => {
-              const part = raw.trim();
-              if (!part) return null;
-              return (
-                <span
-                  key={`role-${idx}`}
-                  className="caption-mono inline-flex items-center rounded-full border border-ink/10 bg-muted px-2.5 py-1 text-ink"
-                >
-                  {part}
-                </span>
-              );
-            })}
-          </div>
+          {page.frontmatter.role.trim() ? (
+            <div className="mt-4 flex flex-wrap justify-center gap-1.5 sm:mt-5">
+              <span className="caption-mono inline-flex items-center rounded-full border border-ink/10 bg-muted px-2.5 py-1 text-ink">
+                {page.frontmatter.role}
+              </span>
+            </div>
+          ) : null}
 
           <StackTagList stack={page.frontmatter.stack} size="md" className="mt-3 justify-center" />
 

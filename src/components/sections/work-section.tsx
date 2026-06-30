@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BookOpen, ChevronRight } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
 import { SectionLabel } from "@/components/sections/section-label";
 import { Reveal } from "@/components/motion/reveal";
@@ -92,20 +92,11 @@ export async function WorkSection() {
                       <p className="font-mono shrink-0 text-[0.9375rem] font-bold leading-snug tracking-normal text-ink sm:text-base">
                         {w.year}
                       </p>
-                      <div className="flex min-w-0 flex-wrap justify-end gap-1">
-                        {w.role.split(/,\s*/).map((raw, idx) => {
-                          const part = raw.trim();
-                          if (!part) return null;
-                          return (
-                            <span
-                              key={`${w.slug}-role-${idx}`}
-                              className="font-mono inline-flex max-w-full shrink-0 items-center whitespace-nowrap rounded-full border border-ink/10 bg-muted px-2 py-1 text-[10px] font-semibold uppercase leading-none tracking-[0.1em] text-ink"
-                            >
-                              {part}
-                            </span>
-                          );
-                        })}
-                      </div>
+                      {w.role.trim() ? (
+                        <span className="font-mono inline-flex max-w-full shrink-0 items-center whitespace-nowrap rounded-full border border-ink/10 bg-muted px-2 py-1 text-[10px] font-semibold uppercase leading-none tracking-[0.1em] text-ink">
+                          {w.role}
+                        </span>
+                      ) : null}
                     </div>
 
                     <h3 className="mt-3 font-sans text-xl font-bold leading-tight tracking-tight text-ink sm:text-[1.375rem]">
@@ -121,30 +112,23 @@ export async function WorkSection() {
 
                     <p className="mt-4 flex-1 text-base leading-relaxed text-ink-700">{w.excerpt}</p>
 
-                    <div
-                      className={cn(
-                        "relative mt-6 flex gap-2",
-                        w.cardHref ? "flex-row items-stretch" : "flex-col",
-                      )}
-                    >
+                    <div className="mt-6 flex flex-col gap-2">
                       {w.cardHref ? (
                         <ExternalProjectLink
                           href={w.cardHref}
                           label={w.cardLabel ?? "Site"}
-                          className="min-w-0 flex-1"
+                          className="w-full"
                         />
                       ) : null}
                       <Link
                         href={`/work/${w.slug}`}
                         className={cn(
-                          "font-mono inline-flex min-h-10 items-center justify-center gap-1.5 rounded-full px-3.5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.1em] transition-colors sm:text-xs",
+                          "font-mono inline-flex min-h-10 w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-2 text-[11px] font-semibold uppercase leading-none tracking-[0.1em] transition-colors sm:text-xs",
                           "border border-transparent bg-accent text-accent-foreground shadow-md hover:bg-accent-600 hover:shadow-lg",
-                          w.cardHref ? "min-w-0 flex-1" : "w-full",
                         )}
                       >
                         <BookOpen className="size-3.5 shrink-0" aria-hidden />
                         Case study
-                        <ChevronRight className="size-3.5 shrink-0 opacity-80" aria-hidden />
                       </Link>
                     </div>
                   </div>

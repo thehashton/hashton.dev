@@ -56,7 +56,7 @@ export function HeroSection() {
           <div>
             <HeroVideo
               kind="mux"
-              playbackId="KuB2l83CxQCAaUCp9F8H00vhNtrTX011d8K3WiPzpfmjs"
+              playbackId="SSTNXPQJ63y8uX4ntYmCPp100XebbmQsNyjzYRtSmIBY"
               thumbnailTime={1}
             />
             <HeroSkills />

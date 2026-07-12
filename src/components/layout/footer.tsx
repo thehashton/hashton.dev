@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { FooterSitemap } from "@/components/layout/footer-sitemap";
+import { NewsletterSignup } from "@/components/marketing/newsletter-signup";
 import { SocialBrandIcon } from "@/components/social/social-brand-icon";
 import { shellClass } from "@/lib/layout-shell";
 import { socialPlatforms } from "@/lib/social-platforms";
@@ -20,6 +21,9 @@ export function Footer() {
           <p className="mx-auto mt-4 max-w-md font-sans text-[2rem] font-bold leading-none tracking-tight text-ink md:mx-0">
             Frontend leadership. Systems thinking. Delivery you can ship and measure.
           </p>
+          <div className="mx-auto mt-8 max-w-md text-left md:mx-0">
+            <NewsletterSignup />
+          </div>
         </div>
 
         <div className="grid gap-10 sm:grid-cols-2">

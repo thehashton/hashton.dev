@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const toggleClassName =
-  "inline-flex size-11 shrink-0 items-center justify-center rounded-md border border-ink/10 bg-paper/80 text-ink shadow-sm transition-colors hover:bg-ink/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink/30";
+  "inline-flex size-11 shrink-0 items-center justify-center rounded-md border border-ink/25 bg-paper text-ink shadow-sm transition-colors hover:bg-ink/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
 
 export function ThemeToggle({ className }: { className?: string }) {
   const { resolvedTheme, setTheme } = useTheme();

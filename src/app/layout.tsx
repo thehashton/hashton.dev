@@ -2,8 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
 import { JsonLd } from "@/components/json-ld";
 import { Providers } from "@/components/providers";
 import { site } from "@/lib/site";
@@ -49,6 +47,12 @@ export const metadata: Metadata = {
     creator: "@TheHashton",
     images: ["/images/og-home.png"],
   },
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Hashton HQ",
+  },
 };
 
 export default function RootLayout({
@@ -61,13 +65,7 @@ export default function RootLayout({
       <body className="min-h-screen w-full bg-paper font-sans text-ink antialiased">
         <JsonLd />
         <Providers>
-          <div className="relative min-h-screen w-full max-w-none">
-            <div className="relative z-10 flex min-h-screen w-full flex-col items-stretch">
-              <Header />
-              <main className="w-full min-w-0 flex-1">{children}</main>
-              <Footer />
-            </div>
-          </div>
+          {children}
         </Providers>
         <Analytics />
         <SpeedInsights />

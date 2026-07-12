@@ -59,3 +59,11 @@ export const socialPlatforms: SocialPlatform[] = [
     channelName: "thehashton",
   },
 ];
+
+/** Map dashboard `social_channels.key` values to brand icons. */
+export function socialBrandForChannelKey(key: string): SocialBrand | null {
+  const normalized = key.trim().toLowerCase();
+  if (normalized === "twitter" || normalized === "x") return siX;
+  const match = socialPlatforms.find((platform) => platform.id === normalized);
+  return match?.brand ?? null;
+}

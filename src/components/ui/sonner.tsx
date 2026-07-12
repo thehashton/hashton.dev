@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { Toaster as Sonner } from "sonner";
 
 export function Toaster() {
@@ -18,11 +18,19 @@ export function Toaster() {
     <Sonner
       theme={theme}
       position="bottom-right"
+      closeButton
+      richColors
       toastOptions={{
         classNames: {
           toast:
-            "rounded-xl border border-ink/10 bg-surface font-mono text-caption tracking-[0.12em] text-ink uppercase shadow-card",
-          description: "font-sans normal-case tracking-normal text-ink-700",
+            "rounded-xl border border-ink/15 bg-surface font-sans text-base text-ink shadow-card",
+          title: "font-semibold tracking-tight",
+          description: "text-ink-700 dark:text-ink-800",
+          success: "border-emerald-500/30",
+          error: "border-danger/40",
+          actionButton: "bg-accent text-accent-foreground",
+          cancelButton: "bg-ink/10 text-ink",
+          closeButton: "border-ink/15 bg-surface text-ink hover:bg-ink/10",
         },
       }}
     />

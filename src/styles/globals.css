@@ -37,6 +37,9 @@
   --palette-accent-600: #a64a30;
   --palette-accent-foreground: #ffffff;
 
+  --palette-danger: #b42318;
+  --palette-danger-foreground: #ffffff;
+
   --palette-strong: #1a1814;
   --palette-on-strong: #faf7f1;
 
@@ -62,6 +65,9 @@
   --color-accent-100: var(--palette-accent-100);
   --color-accent-600: var(--palette-accent-600);
   --color-accent-foreground: var(--palette-accent-foreground);
+
+  --color-danger: var(--palette-danger);
+  --color-danger-foreground: var(--palette-danger-foreground);
 
   --color-strong: var(--palette-strong);
   --color-on-strong: var(--palette-on-strong);
@@ -174,6 +180,9 @@ html.dark {
   --palette-accent-100: #3d2822;
   --palette-accent-600: #b8573e;
   --palette-accent-foreground: #ffffff;
+
+  --palette-danger: #f97066;
+  --palette-danger-foreground: #1a1210;
 
   --palette-strong: #121110;
   --palette-on-strong: #faf7f1;
@@ -300,5 +309,80 @@ html.dark {
   .animate-cta-arrow {
     transform-origin: left center;
     animation: cta-arrow-nudge 4.5s ease-in-out infinite;
+  }
+}
+
+/*
+ * Dashboard WCAG AAA helpers (7:1 normal text on paper/surface).
+ * Scoped so marketing pages keep the existing quieter palette.
+ */
+.dashboard-aaa {
+  --dashboard-muted: var(--palette-ink-700);
+  --dashboard-subtle: var(--palette-ink-800);
+  /* Darker accent so white label text meets ~7:1 on buttons/progress */
+  --palette-accent: #8f3d2c;
+  --palette-accent-600: #7a3425;
+  --palette-accent-foreground: #ffffff;
+  --palette-danger: #912018;
+  --palette-danger-foreground: #ffffff;
+  font-size: 1rem; /* 16px floor for dashboard UI */
+  line-height: 1.5;
+}
+
+html.dark .dashboard-aaa {
+  /* Dark paper #0e0d0b needs lighter muted text for ≥7:1 */
+  --dashboard-muted: var(--palette-ink-800);
+  --dashboard-subtle: var(--palette-ink-900);
+  --palette-accent: #e08a72;
+  --palette-accent-600: #c96f56;
+  --palette-accent-foreground: #121110;
+  --palette-danger: #fda29b;
+  --palette-danger-foreground: #1a1210;
+}
+
+/* Enforce ≥16px on small utility/type styles used across the dashboard */
+.dashboard-aaa :where(.text-xs, .text-sm, .caption-mono),
+.dashboard-aaa :where(label, th, td, button, input, select, textarea, option) {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.dashboard-aaa .caption-mono {
+  color: var(--dashboard-muted);
+  letter-spacing: 0.12em;
+}
+
+.dashboard-aaa :focus-visible {
+  outline: 2px solid var(--palette-ink);
+  outline-offset: 2px;
+}
+
+.dashboard-aaa a:focus-visible,
+.dashboard-aaa button:focus-visible,
+.dashboard-aaa input:focus-visible,
+.dashboard-aaa select:focus-visible,
+.dashboard-aaa textarea:focus-visible {
+  outline: 2px solid var(--palette-ink);
+  outline-offset: 2px;
+}
+
+.dashboard-aaa input,
+.dashboard-aaa textarea,
+.dashboard-aaa select {
+  border-color: color-mix(in oklab, var(--palette-ink) 42%, transparent);
+}
+
+.dashboard-aaa input::placeholder,
+.dashboard-aaa textarea::placeholder {
+  color: var(--dashboard-muted);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-aaa * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

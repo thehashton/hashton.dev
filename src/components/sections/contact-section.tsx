@@ -26,16 +26,16 @@ const CONTACT_SOCIAL_TILE: Record<
   string
 > = {
   youtube:
-    "border-transparent bg-[#FF0000] text-white shadow-sm hover:bg-[#e60000] hover:text-white focus-visible:outline-white/80",
+    "border-black/10 bg-[#FF0000] text-white shadow-sm hover:bg-[#e60000] hover:text-white focus-visible:outline-white/80 dark:border-white/25",
   tiktok:
-    "border-transparent bg-[#000000] text-white shadow-sm hover:bg-zinc-900 hover:text-white focus-visible:outline-white/80",
+    "border-black/15 bg-[#000000] text-white shadow-sm hover:bg-zinc-900 hover:text-white focus-visible:outline-white/80 dark:border-white/30",
   instagram:
-    "border-transparent bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F58529] text-white shadow-sm hover:opacity-95 hover:text-white focus-visible:outline-white/80",
-  x: "border-transparent bg-[#000000] text-white shadow-sm hover:bg-zinc-900 hover:text-white focus-visible:outline-white/80",
+    "border-black/10 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F58529] text-white shadow-sm hover:opacity-95 hover:text-white focus-visible:outline-white/80 dark:border-white/25",
+  x: "border-black/15 bg-[#000000] text-white shadow-sm hover:bg-zinc-900 hover:text-white focus-visible:outline-white/80 dark:border-white/30",
   linkedin:
-    "border-transparent bg-[#0A66C2] text-white shadow-sm hover:bg-[#084d94] hover:text-white focus-visible:outline-white/80",
+    "border-black/10 bg-[#0A66C2] text-white shadow-sm hover:bg-[#084d94] hover:text-white focus-visible:outline-white/80 dark:border-white/25",
   github:
-    "border-transparent bg-[#24292f] text-white shadow-sm hover:bg-[#1a1e22] hover:text-white focus-visible:outline-white/80",
+    "border-black/15 bg-[#24292f] text-white shadow-sm hover:bg-[#1a1e22] hover:text-white focus-visible:outline-white/80 dark:border-white/30",
 };
 
 const schema = z.object({

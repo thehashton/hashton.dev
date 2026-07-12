@@ -5,6 +5,8 @@ import { db } from "@/db";
 import { pushSubscriptions } from "@/db/schema";
 import { getAppSession } from "@/lib/auth/session";
 
+export const dynamic = "force-dynamic";
+
 const schema = z.object({
   endpoint: z.string().url(),
   keys: z.object({

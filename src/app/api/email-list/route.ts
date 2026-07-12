@@ -6,6 +6,8 @@ import { db } from "@/db";
 import { emailSubscribers } from "@/db/schema";
 import { notifyOwnersOfSignup } from "@/lib/push";
 
+export const dynamic = "force-dynamic";
+
 const schema = z.object({
   email: z.string().email().max(320),
   name: z.string().max(160).optional(),

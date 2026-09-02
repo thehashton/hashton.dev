@@ -15,6 +15,8 @@ export function sectionHref(pathname: string, id: SectionNavId): string {
       return "/about";
     case "work":
       return "/work";
+    case "products":
+      return "/#products";
     case "contact":
       return "/contact";
     default: {

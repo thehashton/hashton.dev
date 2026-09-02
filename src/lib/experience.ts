@@ -14,6 +14,17 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
+    id: "codeprepped",
+    role: "Founder",
+    company: "CodePrepped",
+    href: "https://codeprepped.com",
+    logo: "/images/logos/front-end-now.png",
+    period: "2024 — Present",
+    location: "Remote",
+    summary:
+      "Daily frontend interview prep platform — flashcards, questions, and real-world scenarios helping engineers prepare for technical interviews.",
+  },
+  {
     id: "fen",
     role: "Lead Coach and Co-Founder",
     company: "Front End Now",

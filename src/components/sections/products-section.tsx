@@ -37,7 +37,7 @@ export function ProductsSection() {
               Building for the long term.
             </h2>
             <p className="caption-mono max-w-md text-secondary">
-              Products and services I've founded and run alongside contract work.
+              Products and services I&apos;ve founded and run alongside contract work.
             </p>
           </div>
         </Reveal>

@@ -13,7 +13,7 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/harryfen/",
     github: "https://github.com/thehashton/",
     x: "https://x.com/thehashton",
-    youtube: "https://www.youtube.com/@LearnFrontendNow",
+    youtube: "https://www.youtube.com/@iamhashton",
     tiktok: "https://www.tiktok.com/@thehashton",
     instagram: "https://www.instagram.com/thehashton/",
   },

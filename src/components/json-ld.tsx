@@ -16,6 +16,8 @@ export function JsonLd() {
       site.links.x,
       site.links.instagram,
       site.links.tiktok,
+      "https://codeprepped.com",
+      "https://www.hashton.agency",
     ],
     knowsAbout: [
       "Frontend engineering",

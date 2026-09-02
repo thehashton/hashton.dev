@@ -26,10 +26,35 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="grid gap-10 sm:grid-cols-2">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <p className="caption-mono mb-4 text-ink-600">Sitemap</p>
             <FooterSitemap />
+          </div>
+          <div>
+            <p className="caption-mono mb-4 text-ink-600">Products & Studio</p>
+            <ul className="space-y-2 font-mono text-caption tracking-[0.14em] text-ink uppercase">
+              <li>
+                <Link
+                  href="https://codeprepped.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md px-1 py-0.5 transition-colors hover:bg-ink/5"
+                >
+                  CodePrepped
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://www.hashton.agency"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md px-1 py-0.5 transition-colors hover:bg-ink/5"
+                >
+                  Hashton Agency
+                </Link>
+              </li>
+            </ul>
           </div>
           <div>
             <p className="caption-mono mb-4 text-ink-600">Elsewhere</p>

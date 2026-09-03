@@ -27,7 +27,7 @@ export const socialPlatforms: SocialPlatform[] = [
     label: "YouTube",
     href: site.links.youtube,
     brand: siYoutube,
-    channelName: "@LearnFrontendNow",
+    channelName: "@iamhashton",
   },
   {
     id: "tiktok",

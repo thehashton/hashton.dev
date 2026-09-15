@@ -17,7 +17,17 @@ export function Footer() {
         )}
       >
         <div>
-          <p className="caption-mono text-ink-600">© {new Date().getFullYear()} Harry Ashton</p>
+          <p className="caption-mono text-ink-600">
+            © {new Date().getFullYear()} Harry Ashton · Also building{" "}
+            <Link
+              href="https://codeprepped.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink underline decoration-ink/30 transition-colors hover:decoration-ink"
+            >
+              CodePrepped
+            </Link>
+          </p>
           <p className="mx-auto mt-4 max-w-md font-sans text-[2rem] font-bold leading-none tracking-tight text-ink md:mx-0">
             Frontend leadership. Systems thinking. Delivery you can ship and measure.
           </p>

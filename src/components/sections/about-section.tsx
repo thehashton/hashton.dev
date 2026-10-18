@@ -31,13 +31,17 @@ export function AboutSection() {
                   {" "}where teams need guardrails without slowing delivery.
                 </p>
                 <p className="mt-6 text-[1.125rem] leading-relaxed text-ink-800">
-                  Today I&apos;m focused on{" "}
-                  <strong className="text-ink">contract and consulting frontend work</strong>
+                  Today I&apos;m a{" "}
+                  <strong className="text-ink">Senior Software Engineer at Octopus Energy</strong>
                   {" "}
-                  — delivery as a{" "}
-                  <strong className="text-ink">senior individual contributor</strong>, sensible architecture, and
-                  accessibility engineering teams can sustain. If you need someone who ships and explains trade-offs
-                  without theatre, we&apos;ll get along.
+                  on the Flex team, and founder of{" "}
+                  <strong className="text-ink">Hashton Agency</strong>
+                  {" "}
+                  — still shipping as a{" "}
+                  <strong className="text-ink">senior individual contributor</strong>
+                  {" "}
+                  with sensible architecture and accessibility engineering that teams can sustain. If you need someone
+                  who ships and explains trade-offs without theatre, we&apos;ll get along.
                 </p>
               </div>
 

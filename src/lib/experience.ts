@@ -14,15 +14,26 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    id: "codeprepped",
+    id: "octopus-energy",
+    role: "Senior Software Engineer",
+    company: "Octopus Energy (Flex)",
+    href: "https://octopus.energy",
+    logo: "/images/logos/octopus-energy.png",
+    period: "Nov 2026 — Present",
+    location: "Remote, UK",
+    summary:
+      "Senior software engineer on the Flex team — building products that help customers shift energy use, cut bills, and support a more flexible grid.",
+  },
+  {
+    id: "hashton-agency",
     role: "Founder",
-    company: "CodePrepped",
-    href: "https://codeprepped.com",
-    logo: "/images/logos/front-end-now.png",
-    period: "2024 — Present",
+    company: "Hashton Agency",
+    href: "https://www.hashton.agency",
+    logo: "/images/logos/hashton-agency.png",
+    period: "May 2026 — Present",
     location: "Remote",
     summary:
-      "Daily frontend interview prep platform — flashcards, questions, and real-world scenarios helping engineers prepare for technical interviews.",
+      "Websites, apps, and automation for East Midlands businesses — practical digital services that work.",
   },
   {
     id: "fen",
